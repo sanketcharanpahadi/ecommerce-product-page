@@ -1,0 +1,504 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:ital@0;1&family=Kumbh+Sans:wght@400;700&display=swap");
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+input,
+button {
+  border: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: hsl(219, 9%, 45%);
+  text-decoration: none;
+}
+
+input:focus,
+button:focus {
+  outline: none;
+}
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 1.6rem;
+  /* overflow: hidden; */
+}
+
+header {
+  position: relative;
+  padding: 2.2rem 0;
+  border-bottom: 1px solid hsl(219, 9%, 45%);
+}
+
+.nav-bar {
+  background: hsl(0, 0%, 100%);
+  gap: 5rem;
+}
+
+.logo {
+  margin-left: 3.5rem;
+}
+
+.popup {
+  /* display: none; */
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  background-color: hsla(0, 0%, 0%, 0.75);
+}
+
+.nav-links {
+  background-color: hsl(0, 0%, 100%);
+  width: 70%;
+  height: 100vh;
+  gap: 2rem;
+  font-weight: 700;
+  padding: 8rem 2rem;
+}
+
+.nav-links li a {
+  color: hsl(0, 0%, 0%);
+}
+
+.close {
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+}
+
+.hamburger {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 2.5rem;
+}
+
+.profile {
+  gap: 2.2rem;
+  cursor: pointer;
+}
+
+.acc {
+  width: 2.6rem;
+}
+
+.container {
+  gap: 2rem;
+  padding: 0 0 6rem 0;
+}
+
+.about-product {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.product-img {
+  position: relative;
+}
+
+.product-img img {
+  width: 100%;
+  height: 45vh;
+}
+
+.product-img .p-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3.8rem;
+  height: 3.8rem;
+  left: 2rem;
+  background: hsl(0, 0%, 100%);
+  border-radius: 50%;
+  padding: 1.3rem;
+}
+
+.product-img .n-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 2rem;
+  width: 3.8rem;
+  height: 3.8rem;
+  background: hsl(0, 0%, 100%);
+  border-radius: 50%;
+  padding: 1.3rem;
+}
+
+.prices {
+  margin-bottom: 2.5rem;
+}
+
+h3 {
+  text-transform: uppercase;
+  color: hsl(26, 100%, 55%);
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.2rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.8rem;
+}
+
+.sneaker-benefit {
+  color: hsl(219, 9%, 45%);
+  font-size: 1.5rem;
+  line-height: 1.5;
+  margin-bottom: 2.2rem;
+}
+
+.d-price {
+  font-size: 2.8rem;
+  font-weight: bold;
+}
+
+.discount {
+  gap: 1.5rem;
+}
+
+.discount-percentage {
+  color: hsl(26, 100%, 55%);
+  background-color: hsl(25, 100%, 94%);
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.original-price {
+  color: hsl(220, 14%, 75%);
+  font-weight: 700;
+  text-decoration: line-through;
+}
+
+.inc-dec {
+  background-color: hsl(223, 64%, 98%);
+  padding: 2rem 0;
+  border-radius: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.quantity {
+  font-weight: 700;
+}
+
+button {
+  width: 100%;
+  padding: 2rem 0;
+  font-family: inherit;
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(26, 100%, 55%);
+  font-weight: 700;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+  font-size: 1.6rem;
+  gap: 1.5rem;
+}
+
+/* cart popup */
+.cart-popup {
+  display: none;
+  background: hsl(0, 0%, 100%);
+  position: absolute;
+  top: 7.8rem;
+  width: 95%;
+  margin: 0 auto;
+  left: 1rem;
+  padding: 2rem 0;
+  border-radius: 1rem;
+  box-shadow: 0 0.1rem 2.5rem hsl(219, 9%, 45%);
+}
+
+.cart-title {
+  font-size: 1.6rem;
+  padding: 0 2rem;
+  margin-bottom: 2.5rem;
+}
+
+hr {
+  color: hsl(220, 14%, 75%);
+  opacity: 0.2;
+  margin-bottom: 2.5rem;
+}
+
+.products {
+  padding: 0 2rem;
+  gap: 2rem;
+  color: hsl(219, 9%, 45%);
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.product-cart-img img {
+  width: 4.8rem;
+  border-radius: 0.5rem;
+}
+
+.delete {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 2rem;
+}
+
+.checkout {
+  width: 90%;
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+/* desktop popup */
+
+/* UTILITIES */
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.none {
+  display: none;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+@media (min-width: 1193px) {
+  .acc {
+    width: 35%;
+  }
+
+  .logo {
+    margin-left: 0;
+  }
+
+  .header {
+    padding: 3rem 0;
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .nav-bar {
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+
+  .nav {
+    flex-direction: row;
+    gap: 5rem;
+  }
+
+  .close {
+    display: none;
+  }
+
+  .popup {
+    display: block;
+    position: static;
+    height: 0px;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+    padding: 0;
+  }
+
+  .nav-links li a {
+    color: hsl(219, 9%, 45%);
+    font-weight: normal;
+  }
+
+  .container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 72%;
+    margin: 0 auto;
+    padding: 9rem 0;
+  }
+
+  .product-images {
+    width: 55%;
+    margin-right: 12rem;
+  }
+
+  .product-images-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 2.8rem;
+  }
+
+  .product-images-container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+  }
+
+  .p-arrow,
+  .n-arrow {
+    display: none;
+  }
+
+  .about-product {
+    width: 50%;
+  }
+
+  .product-img {
+    margin-bottom: 2.5rem;
+  }
+
+  .product-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 1.5rem;
+  }
+
+  .about-product h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-product h1 {
+    font-size: 4.2rem;
+    line-height: 1.2;
+    margin-bottom: 3.5rem;
+  }
+
+  .sneaker-benefit {
+    font-size: 1.5rem;
+    margin-bottom: 2.3rem;
+  }
+
+  .prices {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .quantity {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .inc-dec {
+    display: inline-flex;
+    width: 50%;
+  }
+
+  button {
+    width: 90%;
+    padding: 1.5rem 0;
+    box-shadow: 0 10px 25px rgba(255, 125, 26, 0.35);
+  }
+
+  .profile {
+    /* gap: 1rem; */
+    justify-content: space-around;
+  }
+
+  .cart-popup {
+    width: 25%;
+    left: 71.5%;
+    top: 9rem;
+    /* box-shadow: none; */
+  }
+
+  .desktop-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: hsla(0, 0%, 0%, 0.75);
+    z-index: 1000;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+  }
+
+  .desktop-popup .product-images {
+    margin: 0;
+  }
+
+  .desktop-popup .product-img {
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+  }
+
+  .desktop-popup .p-arrow,
+  .desktop-popup .n-arrow {
+    display: block;
+  }
+
+  .desktop-popup .p-arrow {
+    left: 170px;
+  }
+
+  .desktop-popup .n-arrow {
+    right: 170px;
+  }
+
+  .desktop-popup .product-images-container {
+    margin: 0 auto;
+  }
+
+  .desktop-popup .product-images-container {
+    width: 42%;
+  }
+
+  .desktop-popup .product-img .close {
+    display: block;
+    top: 5rem;
+    left: 62%;
+    width: 2rem;
+    position: fixed;
+  }
+
+  .desktop-popup .product-img img {
+    width: 50%;
+  }
+}
