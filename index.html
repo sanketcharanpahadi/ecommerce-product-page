@@ -26,7 +26,7 @@
           <div class="logo">
             <img src="images/logo.svg" alt="" />
           </div>
-          <div class="popup none">
+          <div class="popup">
             <img src="images/icon-close.svg" alt="" class="close" />
             <ul class="nav-links flex flex-col">
               <li><a href="#">Collections</a></li>
@@ -49,15 +49,35 @@
       <div class="container flex flex-col">
         <div class="product-images">
           <div class="product-img">
-            <img src="images/image-product-1.jpg" alt="" />
+            <img src="images/image-product-1.jpg" class="shoe-img" alt="" />
             <img src="images/icon-previous.svg" alt="" class="p-arrow" />
             <img src="images/icon-next.svg" alt="" class="n-arrow" />
           </div>
           <div class="product-images-container none">
-            <img src="images/image-product-1-thumbnail.jpg" alt="" />
-            <img src="images/image-product-2-thumbnail.jpg" alt="" />
-            <img src="images/image-product-3-thumbnail.jpg" alt="" />
-            <img src="images/image-product-4-thumbnail.jpg" alt="" />
+            <img
+              src="images/image-product-1-thumbnail.jpg"
+              class="img-short active"
+              alt=""
+              data-img="1"
+            />
+            <img
+              src="images/image-product-2-thumbnail.jpg"
+              class="img-short"
+              alt=""
+              data-img="2"
+            />
+            <img
+              src="images/image-product-3-thumbnail.jpg"
+              class="img-short"
+              alt=""
+              data-img="3"
+            />
+            <img
+              src="images/image-product-4-thumbnail.jpg"
+              class="img-short"
+              alt=""
+              data-img="4"
+            />
           </div>
         </div>
 
@@ -79,11 +99,11 @@
 
           <div class="quantity">
             <div class="inc-dec flex justify-around items-center">
-              <img src="images/icon-minus.svg" alt="" />
-              <span class="quantity"> 0 </span>
-              <img src="images/icon-plus.svg" alt="" />
+              <img src="images/icon-minus.svg" class="minus" alt="" />
+              <span class="product-quantity"> 0 </span>
+              <img src="images/icon-plus.svg" class="plus" alt="" />
             </div>
-            <button class="flex justify-center items-center">
+            <button class="flex justify-center items-center add-to-cart">
               <img src="images/icon-cart.svg" alt="" />
               <span>Add to cart</span>
             </button>
@@ -93,7 +113,7 @@
     </main>
 
     <div class="cart-popup">
-      <h2 class="cart-title">Cart</h2>
+      <!-- <h2 class="cart-title">Cart</h2>
       <hr />
       <div class="products flex items-center">
         <div class="product-cart-img">
@@ -108,10 +128,10 @@
         </div>
         <img src="images/icon-delete.svg" alt="" class="delete" />
       </div>
-      <button class="checkout">Checkout</button>
+      <button class="checkout">Checkout</button> -->
     </div>
 
-    <div class="desktop-popup none">
+    <div class="desktop-popup">
       <div class="product-images">
         <div class="product-img">
           <img src="images/image-product-1.jpg" alt="" />
@@ -127,27 +147,7 @@
         </div>
       </div>
     </div>
-    <!-- 
-  
-  
-  
-  
 
-  
-  
-
-  
-
-  $125.00
-  50%
-  $250.00
-
-  0
-  Add to cart -->
-
-    <!-- <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div> -->
+    <script src="script.js"></script>
   </body>
 </html>
