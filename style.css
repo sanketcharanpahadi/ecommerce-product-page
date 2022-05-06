@@ -531,7 +531,8 @@ hr {
   color: hsl(219, 9%, 45%);
 }
 
-.img-short.active {
+.img-short.active,
+.thumbnail.active {
   border: 3px solid hsl(26, 100%, 55%);
   opacity: 0.3;
 }
@@ -553,6 +554,7 @@ hr {
 .n-arrow,
 .p-arrow,
 .img-short,
-.shoe-img {
+.shoe-img,
+.thumbnail {
   cursor: pointer;
 }

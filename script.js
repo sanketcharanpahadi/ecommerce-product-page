@@ -13,15 +13,20 @@ const nextBtn = document.querySelector(".n-arrow");
 const shoesImg = document.querySelector(".shoe-img");
 const shortImages = document.querySelectorAll(".img-short");
 const productImagesContainer = document.querySelector(
-  ".product-images-container"
+  ".desktop-popup .product-images-container"
 );
 const desktopPopUp = document.querySelector(".desktop-popup");
+const desktopNArrow = document.getElementById("popup-n-arrow");
+const desktopPArrow = document.getElementById("popup-p-arrow");
+const thumbnailImg = document.querySelectorAll(".thumbnail");
+
 let desktopPopupCloseBtn;
 let deleteBtn;
 
 let totalProduct = 0;
 let showTotalCount = 0;
 let currentImage = 1;
+let currentThumbnail = 1;
 // functions
 function init() {
   cartPopup.innerHTML = `
@@ -138,4 +143,62 @@ shoesImg.addEventListener("click", function () {
   desktopPopupCloseBtn.addEventListener("click", function () {
     desktopPopUp.classList.remove("active");
   });
+});
+
+// desktop popup
+const thumbnailParent = document.querySelector(".thumbnail-parent");
+desktopNArrow.addEventListener("click", function () {
+  if (currentThumbnail > 3) {
+    currentThumbnail = 4;
+  } else {
+    currentThumbnail++;
+  }
+  [...thumbnailImg].forEach((img) => {
+    if (img.dataset.curimg == currentThumbnail) {
+      img.classList.add("active");
+      thumbnailParent.src = `${img.getAttribute("src").substring(0, 22)}${img
+        .getAttribute("src")
+        .substring(32, 36)}`;
+      console.log(thumbnailParent.src);
+    } else {
+      img.classList.remove("active");
+    }
+  });
+});
+
+desktopPArrow.addEventListener("click", function () {
+  if (currentThumbnail < 2) {
+    currentThumbnail = 1;
+  } else {
+    currentThumbnail--;
+  }
+  [...thumbnailImg].forEach((img) => {
+    if (img.dataset.curimg == currentThumbnail) {
+      img.classList.add("active");
+      thumbnailParent.src = `${img.getAttribute("src").substring(0, 22)}${img
+        .getAttribute("src")
+        .substring(32, 36)}`;
+      console.log(thumbnailParent.src);
+    } else {
+      img.classList.remove("active");
+    }
+  });
+});
+
+productImagesContainer.addEventListener("click", function (e) {
+  const target = e.target;
+
+  if (target.classList.contains("thumbnail")) {
+    let targetDataSet = target.dataset.curimg;
+    [...thumbnailImg].forEach((img) => {
+      if (img.dataset.curimg == targetDataSet) {
+        img.classList.add("active");
+      } else {
+        img.classList.remove("active");
+      }
+    });
+    thumbnailParent.src = `${target
+      .getAttribute("src")
+      .substring(0, 22)}${target.getAttribute("src").substring(32, 36)}`;
+  }
 });
