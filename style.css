@@ -276,6 +276,9 @@ hr {
 }
 
 /* desktop popup */
+.desktop-popup {
+  display: none;
+}
 
 /* UTILITIES */
 .flex {
@@ -480,29 +483,9 @@ hr {
     position: relative;
   }
 
-  .desktop-popup .p-arrow,
-  .desktop-popup .n-arrow {
-    display: block;
-    /* width: 2rem;
-    height: 2rem; */
-    /* padding: 1rem 0; */
-    /* display: none; */
-  }
-
-  .desktop-popup .p-arrow {
-    left: 170px;
-  }
-
-  .desktop-popup .n-arrow {
-    right: 170px;
-  }
-
-  .desktop-popup .product-images-container {
-    margin: 0 auto;
-  }
-
   .desktop-popup .product-images-container {
     width: 42%;
+    margin: 0 auto;
   }
 
   .desktop-popup .product-img .close {
@@ -513,8 +496,30 @@ hr {
     position: fixed;
   }
 
-  .desktop-popup .product-img img {
+  .desktop-popup .product-img img:first-of-type {
     width: 50%;
+  }
+
+  #popup-p-arrow,
+  #popup-n-arrow {
+    display: block;
+    position: absolute;
+    width: 3.8rem;
+    height: 3.8rem;
+    background: hsl(0, 0%, 100%);
+    border-radius: 50%;
+    padding: 1.3rem;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+
+  #popup-p-arrow {
+    left: 170px;
+  }
+
+  #popup-n-arrow {
+    right: 170px;
   }
 }
 

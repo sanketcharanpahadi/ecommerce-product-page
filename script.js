@@ -75,7 +75,7 @@ addToCartBtn.addEventListener("click", function () {
   }
   deleteBtn = document.querySelector(".delete");
   deleteBtn.addEventListener("click", function () {
-    totalProduct = 0;
+    totalProduct = +quantity.textContent;
     showTotalCount = 0;
     init();
   });
