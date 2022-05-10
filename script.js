@@ -123,7 +123,6 @@ startProductImagesContainer.addEventListener("click", (e) => {
   const target = e.target;
   if (target.classList.contains("img-short")) {
     const targetSrc = target.getAttribute("src");
-    console.log(targetSrc);
     const dataAttribute = target.dataset.img;
     shoesImg.src = `${targetSrc.substring(0, 22)}${targetSrc.substring(
       32,
@@ -208,5 +207,3 @@ productImagesContainer.addEventListener("click", function (e) {
       .substring(0, 22)}${target.getAttribute("src").substring(32, 36)}`;
   }
 });
-
-console.log(startProductImagesContainer);

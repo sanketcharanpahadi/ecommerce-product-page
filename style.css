@@ -558,3 +558,43 @@ hr {
 .thumbnail {
   cursor: pointer;
 }
+
+/* hover classes */
+.acc:hover {
+  border: 2px solid hsl(26, 100%, 55%);
+  border-radius: 50%;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links li a::after {
+  content: "";
+  display: none;
+  width: 100%;
+  background-color: hsl(26, 100%, 55%);
+  height: 0.5rem;
+  position: absolute;
+  bottom: -48px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-links li a:hover::after {
+  display: block;
+}
+
+#cart {
+  filter: brightness(0) invert(1);
+}
+
+.close {
+  filter: brightness(0) invert(1);
+}
+
+.add-to-cart:hover,
+.plus:hover,
+.minus:hover {
+  opacity: 0.6;
+}
