@@ -15,6 +15,9 @@ const shortImages = document.querySelectorAll(".img-short");
 const productImagesContainer = document.querySelector(
   ".desktop-popup .product-images-container"
 );
+const startProductImagesContainer = document.querySelector(
+  ".product-images-container"
+);
 const desktopPopUp = document.querySelector(".desktop-popup");
 const desktopNArrow = document.getElementById("popup-n-arrow");
 const desktopPArrow = document.getElementById("popup-p-arrow");
@@ -116,13 +119,16 @@ nextBtn.addEventListener("click", function () {
   shoesImg.src = `images/image-product-${currentImage}.jpg`;
 });
 
-productImagesContainer.addEventListener("click", (e) => {
+startProductImagesContainer.addEventListener("click", (e) => {
   const target = e.target;
   if (target.classList.contains("img-short")) {
-    const targetSrc = target.src;
+    const targetSrc = target.getAttribute("src");
+    console.log(targetSrc);
     const dataAttribute = target.dataset.img;
-    console.log(dataAttribute);
-    shoesImg.src = `images/image-product-${targetSrc[46]}.jpg`;
+    shoesImg.src = `${targetSrc.substring(0, 22)}${targetSrc.substring(
+      32,
+      36
+    )}`;
     [...shortImages].forEach((item) => {
       if (item.dataset.img == dataAttribute) {
         item.classList.add("active");
@@ -202,3 +208,5 @@ productImagesContainer.addEventListener("click", function (e) {
       .substring(0, 22)}${target.getAttribute("src").substring(32, 36)}`;
   }
 });
+
+console.log(startProductImagesContainer);
