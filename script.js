@@ -22,6 +22,7 @@ const desktopPopUp = document.querySelector(".desktop-popup");
 const desktopNArrow = document.getElementById("popup-n-arrow");
 const desktopPArrow = document.getElementById("popup-p-arrow");
 const thumbnailImg = document.querySelectorAll(".thumbnail");
+const totalItemsInCart = document.querySelector(".total-items-in-cart");
 
 let desktopPopupCloseBtn;
 let deleteBtn;
@@ -57,6 +58,7 @@ decrementCounter.addEventListener("click", function () {
 
 addToCartBtn.addEventListener("click", function () {
   showTotalCount += totalProduct;
+  totalItemsInCart.innerText = showTotalCount;
   if (showTotalCount > 0) {
     cartPopup.innerHTML = `
   <h2 class="cart-title">Cart</h2>
@@ -85,6 +87,7 @@ addToCartBtn.addEventListener("click", function () {
   deleteBtn.addEventListener("click", function () {
     totalProduct = +quantity.textContent;
     showTotalCount = 0;
+    totalItemsInCart.innerText = showTotalCount;
     init();
   });
 });
