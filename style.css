@@ -608,7 +608,7 @@ hr {
   filter: brightness(0) invert(1);
 }
 
-.close {
+.desktop-popup .close {
   filter: brightness(0) invert(1);
 }
 
